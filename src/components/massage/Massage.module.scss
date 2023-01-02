@@ -1,0 +1,79 @@
+.align {
+    display: flex;
+    justify-content: flex-start;
+
+    &.my_massage {
+        justify-content: flex-end;
+    }
+
+    .massage {
+        background: rgb(226, 226, 240);
+        color: black;
+        display: inline-block;
+        gap: 2px;
+        padding: 4px 10px;
+        font-size: 16px;
+        border-radius: 10px;
+        max-width: 450px;
+
+        h6 {
+            color: rgb(231, 100, 100);
+            font-size: 12px;
+        }
+
+        h6.my_color {
+            color: rgb(42, 116, 235);
+        }
+
+        p {
+            // margin-left: 5px;
+            color: rgb(58, 57, 56);
+        }
+    }
+
+    .pop_up_2.hidden {
+        display: none;
+    }
+
+    .pop_up_2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .window {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 310px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .btns {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+
+                .btn {
+                    border: 1px solid rgb(71, 71, 231);
+                    padding: 10px 20px;
+                    color: rgb(71, 71, 231);
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+                .btn.yes {
+                    background: red;
+                    color: white;
+                    border: 1px solid red;
+                }
+            }
+        }
+    }
+}
