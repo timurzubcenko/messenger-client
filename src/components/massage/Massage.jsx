@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import styles from './Massage.module.scss'
+const API_URL = process.env.REACT_APP_API_URL
 
 const Massage = ({ massages, setMassages, inputName, massage }) => {
     const { _id, name, text } = massage
@@ -13,7 +14,7 @@ const Massage = ({ massages, setMassages, inputName, massage }) => {
     const yesRemove = (id) => {
         // setMassages(massages.filter(m => m._id !== _id))
         // setDeleteMassage(!deleteMassage)
-        axios.delete('http://localhost:8000/api/messages/' + id)
+        axios.delete(API_URL + 'api/messages/' + id)
             .then(res => {
                 console.log(res.data.msg)
                 setMassages(massages.filter(m => m._id !== id))

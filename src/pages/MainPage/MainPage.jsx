@@ -4,6 +4,7 @@ import PopUp from '../../components/pop_up/PopUp';
 import styles from './MainPage.module.scss'
 import axios from 'axios'
 import { Telegram, Gear } from 'react-bootstrap-icons'
+const API_URL = process.env.REACT_APP_API_URL
 
 const MainPage = () => {
     const [nameNotSave, setNameNotSave] = useState(true)
@@ -39,7 +40,7 @@ const MainPage = () => {
     }
 
     const getMassages = () => {
-        axios.get('http://localhost:8000/api/messages/')
+        axios.get(API_URL + 'api/messages/')
             .then((res) => {
                 setMassages(res.data)
             })
@@ -55,7 +56,7 @@ const MainPage = () => {
     const sendMas = () => {
         const massage = { name: inputName, text: input }
         if (input !== '') {
-            axios.post('http://localhost:8000/api/messages', massage)
+            axios.post(API_URL + 'api/messages', massage)
                 .then(res => {
                     setInput('')
                     setMassages([res.data, ...massages])
