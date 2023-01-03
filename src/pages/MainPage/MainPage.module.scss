@@ -7,6 +7,7 @@
     background: #dfdfdf70;
     backdrop-filter: blur(130px);
     position: relative;
+    transition: all 0.3s;
 
     .chat {
         position: absolute;
@@ -98,6 +99,59 @@
         }
     }
 }
+
+
+
+
+.main.dark {
+    box-shadow: 0 10px 45px rgba(0, 0, 0, 0.3);
+    background: #1e1d1d70;
+
+    .inputs {
+        background: #464545;
+
+        input {
+            background: transparent;
+            color: rgb(227, 226, 226);
+        }
+
+        .input_massage {
+            border-right: 2px solid rgb(122, 122, 122);
+        }
+
+        input::-webkit-input-placeholder {
+            color: rgb(185, 185, 185);
+        }
+
+        .btn {
+            background: rgb(49, 169, 234);
+        }
+
+        // .btn:hover {
+        //     background: white;
+        // }
+
+        // .btn:hover i {
+        //     color: rgb(49, 169, 234);
+        //     border-radius: 50%;
+        // }
+
+        .btn i {
+            color: #ffffff;
+        }
+
+        .btn.rename {
+            background: transparent;
+        }
+
+        .btn.rename i {
+            color: rgb(162, 162, 162);
+        }
+    }
+}
+
+
+
 
 .pop_app.hidden {
     display: none;

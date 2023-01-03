@@ -11,11 +11,16 @@ const MainPage = () => {
     const [animateName, setAnimateName] = useState(false)
     const [input, setInput] = useState('')
     const [inputName, setInputname] = useState('')
+    const [darkModeOn, setDarkModeOn] = useState(false)
     const [massages, setMassages] = useState([
 
     ])
 
     let [name, setName] = useState('')
+
+    const changeThem = () => {
+        setDarkModeOn(!darkModeOn)
+    }
 
     const onChange = (e) => {
         setInput(e.target.value)
@@ -103,10 +108,12 @@ const MainPage = () => {
                     <div className={styles.ball_5}></div>
                     <div className={styles.ball_6}></div>
                 </div>
-                <div className={styles.main}>
+                <div className={`${styles.main} ${darkModeOn ? styles.dark : ''}`}>
                     <div className={styles.chat}>
                         {massages.map((massage, index) =>
                             <Massage
+                                darkModeOn={darkModeOn}
+                                changeThem={changeThem}
                                 massages={massages}
                                 setMassages={setMassages}
                                 inputName={inputName}
@@ -133,6 +140,8 @@ const MainPage = () => {
                 </div>
             </div>
             <PopUp
+                darkModeOn={darkModeOn}
+                changeThem={changeThem}
                 nameNotSave={nameNotSave}
                 onChangeName={onChangeName}
                 inputName={inputName}

@@ -3,7 +3,7 @@ import axios from 'axios'
 import styles from './Massage.module.scss'
 const API_URL = process.env.REACT_APP_API_URL
 
-const Massage = ({ massages, setMassages, inputName, massage }) => {
+const Massage = ({ darkModeOn, massages, setMassages, inputName, massage }) => {
     const { _id, name, text } = massage
     const [deleteMassage, setDeleteMassage] = useState(false)
 
@@ -30,7 +30,7 @@ const Massage = ({ massages, setMassages, inputName, massage }) => {
     }
 
     return (
-        <div className={`${styles.align} ${inputName === name ? styles.my_massage : ''}`}>
+        <div className={`${styles.align} ${inputName === name ? styles.my_massage : ''} ${darkModeOn ? styles.dark : ''}`}>
             <div onClick={removeMassage} className={styles.massage}>
                 <h6 className={inputName === name ? styles.my_color : ''} >{name}</h6>
                 <p>{text}</p>
