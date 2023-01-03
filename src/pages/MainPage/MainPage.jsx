@@ -15,7 +15,6 @@ const MainPage = () => {
     const [massages, setMassages] = useState([
 
     ])
-
     let [name, setName] = useState('')
 
     const changeThem = () => {
