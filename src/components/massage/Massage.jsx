@@ -4,6 +4,7 @@ import styles from './Massage.module.scss'
 const API_URL = process.env.REACT_APP_API_URL
 
 const Massage = ({ darkModeOn, massages, setMassages, inputName, massage }) => {
+
     const { _id, name, text } = massage
     const [deleteMassage, setDeleteMassage] = useState(false)
 
